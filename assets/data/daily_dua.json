@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "دعاء الصباح",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا",
+    "transliteration": "Allahumma inni as'aluka 'ilman nafi'an, wa rizqan tayyiban, wa 'amalan mutaqabbalan",
+    "translation": "O Allah, I ask You for beneficial knowledge, goodly provision, and acceptable deeds"
+  },
+  {
+    "id": 2,
+    "title": "دعاء الرزق",
+    "arabic": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+    "transliteration": "Allahumma akfini bihalalika 'an haramika, wa aghnini bifadlika 'amman siwaka",
+    "translation": "O Allah, suffice me with what You have allowed instead of what You have forbidden, and make me independent of all others besides You"
+  },
+  {
+    "id": 3,
+    "title": "دعاء الهداية",
+    "arabic": "اللَّهُمَّ اهْدِنِي وَسَدِّدْنِي",
+    "transliteration": "Allahumma ihdini wa saddidni",
+    "translation": "O Allah, guide me and grant me uprightness"
+  },
+  {
+    "id": 4,
+    "title": "دعاء الشكر",
+    "arabic": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+    "transliteration": "Allahumma a'inni 'ala dhikrika wa shukrika wa husni 'ibadatika",
+    "translation": "O Allah, help me to remember You, to thank You, and to worship You in the best manner"
+  },
+  {
+    "id": 5,
+    "title": "دعاء الفرج",
+    "arabic": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا",
+    "transliteration": "Allahumma la sahla illa ma ja'altahu sahlan, wa anta taj'alul-hazna idha shi'ta sahlan",
+    "translation": "O Allah, there is no ease except what You make easy, and You make the difficult easy if You wish"
+  },
+  {
+    "id": 6,
+    "title": "دعاء الحفظ",
+    "arabic": "اللَّهُمَّ احْفَظْنِي بِالْإِسْلَامِ قَائِمًا، وَاحْفَظْنِي بِالْإِسْلَامِ قَاعِدًا، وَاحْفَظْنِي بِالْإِسْلَامِ رَاقِدًا",
+    "transliteration": "Allahumma ihfazni bil-islami qa'iman, wahfazni bil-islami qa'idan, wahfazni bil-islami raqidan",
+    "translation": "O Allah, protect me with Islam when standing, protect me with Islam when sitting, and protect me with Islam when lying down"
+  },
+  {
+    "id": 7,
+    "title": "دعاء التوفيق",
+    "arabic": "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي",
+    "transliteration": "Rabbi ishrah li sadri wa yassir li amri",
+    "translation": "My Lord, expand for me my breast and ease for me my task"
+  }
+]

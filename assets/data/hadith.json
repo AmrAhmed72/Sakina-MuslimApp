@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "arabic": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+    "translation": "Actions are judged by intentions, and everyone will get what they intended",
+    "narrator": "عمر بن الخطاب",
+    "source": "صحيح البخاري"
+  },
+  {
+    "id": 2,
+    "arabic": "مَن كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+    "translation": "Whoever believes in Allah and the Last Day should speak good or remain silent",
+    "narrator": "أبو هريرة",
+    "source": "صحيح البخاري"
+  },
+  {
+    "id": 3,
+    "arabic": "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
+    "translation": "The Muslim is the one from whose tongue and hand the Muslims are safe",
+    "narrator": "عبد الله بن عمرو",
+    "source": "صحيح البخاري"
+  },
+  {
+    "id": 4,
+    "arabic": "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
+    "translation": "None of you truly believes until he loves for his brother what he loves for himself",
+    "narrator": "أنس بن مالك",
+    "source": "صحيح البخاري"
+  },
+  {
+    "id": 5,
+    "arabic": "الدِّينُ النَّصِيحَةُ",
+    "translation": "Religion is sincere advice",
+    "narrator": "تميم الداري",
+    "source": "صحيح مسلم"
+  },
+  {
+    "id": 6,
+    "arabic": "مَنْ صَلَّى الْبَرْدَيْنِ دَخَلَ الْجَنَّةَ",
+    "translation": "Whoever prays the two cool prayers (Fajr and Asr) will enter Paradise",
+    "narrator": "أبو موسى الأشعري",
+    "source": "صحيح البخاري"
+  },
+  {
+    "id": 7,
+    "arabic": "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+    "translation": "The best among you are those who learn the Quran and teach it",
+    "narrator": "عثمان بن عفان",
+    "source": "صحيح البخاري"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "رأس السنة الهجرية",
+    "englishName": "Islamic New Year",
+    "hijriMonth": 1,
+    "hijriDay": 1,
+    "description": "بداية السنة الهجرية الجديدة"
+  },
+  {
+    "id": 2,
+    "name": "عاشوراء",
+    "englishName": "Day of Ashura",
+    "hijriMonth": 1,
+    "hijriDay": 10,
+    "description": "يوم صيام مستحب، نجى الله فيه موسى وقومه"
+  },
+  {
+    "id": 3,
+    "name": "المولد النبوي",
+    "englishName": "Mawlid al-Nabi",
+    "hijriMonth": 3,
+    "hijriDay": 12,
+    "description": "ذكرى مولد النبي محمد صلى الله عليه وسلم"
+  },
+  {
+    "id": 4,
+    "name": "الإسراء والمعراج",
+    "englishName": "Isra and Mi'raj",
+    "hijriMonth": 7,
+    "hijriDay": 27,
+    "description": "ذكرى رحلة الإسراء والمعراج"
+  },
+  {
+    "id": 5,
+    "name": "بداية رمضان",
+    "englishName": "Start of Ramadan",
+    "hijriMonth": 9,
+    "hijriDay": 1,
+    "description": "بداية شهر رمضان المبارك"
+  },
+  {
+    "id": 6,
+    "name": "ليلة القدر",
+    "englishName": "Laylat al-Qadr",
+    "hijriMonth": 9,
+    "hijriDay": 27,
+    "description": "ليلة القدر خير من ألف شهر"
+  },
+  {
+    "id": 7,
+    "name": "عيد الفطر",
+    "englishName": "Eid al-Fitr",
+    "hijriMonth": 10,
+    "hijriDay": 1,
+    "description": "عيد الفطر المبارك"
+  },
+  {
+    "id": 8,
+    "name": "يوم عرفة",
+    "englishName": "Day of Arafah",
+    "hijriMonth": 12,
+    "hijriDay": 9,
+    "description": "أفضل أيام السنة، يوم الحج الأكبر"
+  },
+  {
+    "id": 9,
+    "name": "عيد الأضحى",
+    "englishName": "Eid al-Adha",
+    "hijriMonth": 12,
+    "hijriDay": 10,
+    "description": "عيد الأضحى المبارك"
+  }
+]

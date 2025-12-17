@@ -1,0 +1,118 @@
+name: sakina
+description: "A new Flutter project."
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_native_splash: ^2.4.4
+  introduction_screen: ^3.1.17
+  google_fonts: ^6.2.1
+  carousel_slider: ^5.1.1
+  http: ^1.2.1
+  audioplayers: ^6.0.0
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.3
+  get_it: ^7.6.4
+  intl: ^0.19.0
+  shared_preferences: ^2.2.2
+  smooth_page_indicator: ^1.1.0
+  geolocator: ^14.0.2
+  package_info_plus: ^8.0.0
+  flutter_compass: ^0.8.0
+  permission_handler: ^11.0.0
+  flutter_background_service: ^5.1.0
+  flutter_background_service_android: ^6.2.2
+  flutter_local_notifications: ^19.5.0
+  flutter_localizations:
+    sdk: flutter
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  generate: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/file/
+    - assets/data/
+    - assets/quran/
+    - assets/azkar/
+    - assets/
+    - assets/pray/
+    - assets/audio/
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # family key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: ElMessiri
+      fonts:
+        - asset: assets/fonts/ElMessiri-Regular.ttf
+        - asset: assets/fonts/ElMessiri-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/ElMessiri-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/ElMessiri-Bold.ttf
+          weight: 700
+    - family: AmiriQuran
+      fonts:
+        - asset: assets/fonts/AmiriQuran-Regular.ttf
+
+
+
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
+
+flutter_native_splash:
+  color: "#202020"
+  image: assets/images/islami_header.png
+  android: true
+  ios: true
+  web: true
+
+  android_12:
+    color: "#202020"
+    image: assets/images/islami_header.png
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#FFFFFF"

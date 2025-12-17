@@ -1,0 +1,234 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class IslamicEventsScreen extends StatefulWidget {
+  const IslamicEventsScreen({Key? key}) : super(key: key);
+
+  @override
+  State<IslamicEventsScreen> createState() => _IslamicEventsScreenState();
+}
+
+class _IslamicEventsScreenState extends State<IslamicEventsScreen> {
+  List<Map<String, dynamic>> _events = [];
+  bool _loading = true;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadEvents();
+  }
+
+  Future<void> _loadEvents() async {
+    try {
+      final raw = await rootBundle.loadString('assets/data/islamic_events.json');
+      final decoded = json.decode(raw);
+      List<Map<String, dynamic>> events = [];
+
+      if (decoded is List) {
+        events = decoded.cast<Map<String, dynamic>>();
+      } else if (decoded is Map && decoded['events'] is List) {
+        events = List<Map<String, dynamic>>.from(decoded['events']);
+      }
+
+      setState(() {
+        _events = events;
+        _loading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _error = 'فشل تحميل المناسبات الإسلامية';
+        _loading = false;
+      });
+    }
+  }
+
+  String _formatHijri(dynamic day, dynamic month) {
+    final d = int.tryParse(day?.toString() ?? '');
+    final m = int.tryParse(month?.toString() ?? '');
+    if (d == null || m == null || m < 1 || m > 12) return '';
+    const months = [
+      'محرم', 'صفر', 'ربيع الأول', 'ربيع الآخر', 'جمادى الأولى',
+      'جمادى الآخرة', 'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'
+    ];
+    return '$d ${months[m - 1]}';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        backgroundColor: const Color(0xFF202020),
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 16, top: 8),
+            child: IconButton(
+              icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xFFE2BE7F)),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
+          title: Text(
+            'المناسبات الإسلامية',
+            style: GoogleFonts.elMessiri(
+              color: const Color(0xFFE2BE7F),
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          centerTitle: true,
+        ),
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/sura_details_bg.png"),
+              fit: BoxFit.cover,
+              opacity: 0.07,
+            ),
+          ),
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Column(
+                children: [
+                  // عنوان جميل فوق اللائحة (اختياري)
+                  
+
+                  // الحالة: تحميل، خطأ، فارغ، أو عرض القائمة
+                  if (_loading)
+                    const Expanded(
+                      child: Center(child: CircularProgressIndicator(color: Color(0xFFE2BE7F))),
+                    )
+                  else if (_error != null)
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          _error!,
+                          style: GoogleFonts.elMessiri(color: Colors.redAccent, fontSize: 18),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    )
+                  else if (_events.isEmpty)
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          'لا توجد مناسبات متاحة حالياً',
+                          style: GoogleFonts.elMessiri(color: Colors.white70, fontSize: 18),
+                        ),
+                      ),
+                    )
+                  else
+                    Expanded(
+                      child: ListView.separated(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        itemCount: _events.length,
+                        separatorBuilder: (_, __) => const SizedBox(height: 16),
+                        itemBuilder: (context, i) {
+                          final e = _events[i];
+                          final title = e['name'] ?? e['title'] ?? 'مناسبة إسلامية';
+                          final english = e['englishName']?.toString() ?? '';
+                          final desc = e['description']?.toString() ?? e['details']?.toString() ?? '';
+                          final hijriDay = e['hijriDay'] ?? e['day'];
+                          final hijriMonth = e['hijriMonth'] ?? e['month'];
+                          final hijriLabel = _formatHijri(hijriDay, hijriMonth);
+
+                          return IslamicEventGlassCard(
+                            title: title,
+                            english: english,
+                            hijri: hijriLabel,
+                            description: desc,
+                          );
+                        },
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// كارت المناسبة (نفس الشكل الجميل لكن بدون إطار خارجي)
+class IslamicEventGlassCard extends StatelessWidget {
+  final String title;
+  final String english;
+  final String hijri;
+  final String description;
+
+  const IslamicEventGlassCard({
+    Key? key,
+    required this.title,
+    required this.english,
+    required this.hijri,
+    required this.description,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        color: Colors.white.withOpacity(0.08),
+        border: Border.all(color: const Color(0xFFE2BE7F).withOpacity(0.5), width: 1.8),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFE2BE7F).withOpacity(0.15),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: GoogleFonts.elMessiri(
+              fontSize: 19,
+              fontWeight: FontWeight.bold,
+              color: const Color(0xFFE2BE7F),
+            ),
+          ),
+          if (english.isNotEmpty) ...[
+            const SizedBox(height: 6),
+            Text(
+              english,
+              style: GoogleFonts.elMessiri(color: Colors.white70, fontSize: 14),
+            ),
+          ],
+          if (hijri.isNotEmpty) ...[
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                const Icon(Icons.calendar_today, size: 18, color: Color(0xFFE2BE7F)),
+                const SizedBox(width: 8),
+                Text(
+                  hijri,
+                  style: GoogleFonts.elMessiri(color: const Color(0xFFE2BE7F), fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ],
+          if (description.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Text(
+              description,
+              style: GoogleFonts.elMessiri(color: Colors.white, fontSize: 14.5, height: 1.7),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
